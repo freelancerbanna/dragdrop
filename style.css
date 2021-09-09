@@ -1,0 +1,124 @@
+*{
+  box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6{
+  margin: 0;
+  padding: 0;
+}
+body{
+  display: flex;
+  background-color: whitesmoke;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  position: relative;
+  height: 100vh;
+}
+.draggableList{
+  list-style-type: none;
+  background-color: #fff;
+  border: 1px solid #d4d4d4;
+  padding: 0;
+  color: #5d6f82;
+  width: 350px;
+  border-radius: 10px;
+  height: 80vh;
+  overflow-y: scroll;
+}
+.draggableList li{
+  display: flex;
+  flex: 1;
+  background-color: #eaeaeae3;
+  align-items: center;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 10px;
+  position: relative;
+}
+.draggableList li p.content{
+  display: none;
+}
+p.content {
+  position: absolute;
+  color: #5d6f82;
+  right: 21px;
+  top: -30px;
+  background: white;
+  z-index: 1;
+  width: 140px;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+}
+.draggableList li:hover p.content{
+  display: flex;
+}
+.draggableList li span.number {
+  flex: 0.1;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+}
+.draggableList li p.person {
+    padding-left: 10px;
+}
+.draggable {
+  display: flex;
+  align-items: center;
+  flex: 0.9;
+  position: relative;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: 10px;
+}
+i.fas.fa-grip-lines {
+  position: absolute;
+  right: 10px;
+}
+.checkBtn{
+  outline: none;
+  margin-bottom: 15px;
+  cursor: pointer;
+  padding: 5px;
+}
+.checkBtn:active{
+  transform: scale(0.97);
+}
+
+.success {
+  position: absolute;
+  background: white;
+  z-index: 99;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 30%;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  display: none;
+}
+.success.active{
+  display: flex;
+}
+button.exit {
+  bottom: 10px;
+  position: absolute;
+}
+/* javascript working functionality */
+.draggableList li.over .draggable{
+  background-color: white;
+}
+.draggableList li.right p.person {
+  color:rgb(2, 196, 76);
+}
+.draggableList li.wrong p.person {
+  color:red
+}
